@@ -18,10 +18,10 @@ Extract the downloaded ZIP file (it will typically be in your `~/Downloads/` fol
 
 Create the icons directory and copy the theme:
 
-'bash 
+```bash 
 mkdir -p ~/.local/share/icons/
 cp -r ~/Downloads/invisible-cursor-theme-main/InvisibleCursor ~/.local/share/icons/
-'
+```
 
 ### Step 3. Apply the theme 
 
