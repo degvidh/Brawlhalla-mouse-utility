@@ -37,7 +37,7 @@ hyprctl setcursor InvisibleCursor 24
 
 That's it! Your cursor should now be completely invisible while still accepting clicks and movement inputs.
 
-### Reverting the mouse to visible
+### Step 4. Optional : Reverting the mouse to visible
 
 To revert the mouse to visible you will use the same command
 Simply with your mouse theme name or by using default and later 
