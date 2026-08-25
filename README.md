@@ -1,77 +1,78 @@
 # Invisible Cursor For Brawlhalla
 
-This is a simple guide i decided to make by my own on how to make your
-cursor completely invisible in hyprland while keeping full mouse functionality 
-for Brawlhalla. 
+A simple guide on how to make your cursor completely invisible in Hyprland while keeping full mouse functionality for Brawlhalla.
 
-## Installation procces 
+## Installation Process
 
-### Step 1. Downalod the invisible cursor theme
-Credits to : https://github.com/l-theanine
+### Step 1. Download the Invisible Cursor Theme
+
+Credits to: l-theanine
 
 Download the invisible cursor theme from:
-[https://github.com/l-theanine/invisible-cursor-theme](https://github.com/l-theanine/invisible-cursor-theme)
+https://github.com/l-theanine/invisible-cursor-theme
 
-Extract the downloaded ZIP file (it will typically be in your `~/Downloads/` folder).
+Extract the downloaded ZIP file (it will typically be in your ~/Downloads/ folder).
 
-### Step 2. Install the theme
+### Step 2. Install the Theme
 
 Create the icons directory and copy the theme:
 
-```
 mkdir -p ~/.local/share/icons/
 cp -r ~/Downloads/invisible-cursor-theme-main/InvisibleCursor ~/.local/share/icons/
-```
 
-### Step 3. Apply the theme 
+### Step 3. Apply the Theme System-Wide (Optional)
 
-> [!WARNING]
-> Find out your default cursor theme name before switching it
-> Or you can just use the default which is : Adwaita
-> Set it back by using the same command just the cursor name :D 
+Find out your default cursor theme name before switching it. The default is usually: Adwaita.
 
 Use hyprctl to instantly change your cursor to invisible:
-```
+
 hyprctl setcursor InvisibleCursor 24
-```
 
 That's it! Your cursor should now be completely invisible while still accepting clicks and movement inputs.
 
-### Step 4. Optional : Reverting the mouse to visible
+### Step 4. Apply the Theme for Brawlhalla (The Real Solution)
 
-To revert the mouse to visible you will use the same command
-Simply with your mouse theme name or by using default and later 
-finding out its name :D 
+Since Brawlhalla runs through XWayland, hyprctl setcursor won't work for the game. Instead, you need to set the cursor theme using environment variables.
 
-Use this command :
-```
+For Steam Launch Options:
+
+Right-click Brawlhalla in Steam → Properties → Launch Options, and add:
+
+XCURSOR_THEME=InvisibleCursor XCURSOR_SIZE=24 %command%
+
+This will make Brawlhalla use the invisible cursor while your system keeps its normal cursor.
+
+### Step 5. Reverting the Mouse to Visible
+
+To revert the mouse to visible, use the same command with your default theme name:
+
 hyprctl setcursor Adwaita 24
-```
 
-## Throuble shooting (pew pew)
+If you used the Steam launch option, just remove it from the launch options and the cursor will go back to normal.
 
-### If the theme isnt applying what do i do?
+## Troubleshooting
 
-Try restarting hyprland with : 
-```
+### The theme isn't applying?
+Try restarting Hyprland:
+
 hyprctl reload
-```
 
 ### Normal cursor not coming back?
-Try to replace the cursor name with the default one 
-like in the next command : 
-```
+Replace the cursor name with your default one:
+
 hyprctl setcursor Adwaita 24
-```
 
-## Notes 
+### Brawlhalla still shows the normal cursor?
+Make sure you added the XCURSOR_THEME variables to your Steam launch options exactly as shown above.
 
-- The invisible cursor works its great for Brawlhalla specifically for keyboard 
-and mouse users like me :D 
-- This works with hyprland but should work with x11 wm aswell tho i strongly despise
-using this guide for x11
-- The theme is completely transparent no visible cursor at all !!!
+## Notes
 
-## Links 
+- The invisible cursor works great for Brawlhalla, especially for keyboard and mouse users
+- This works with Hyprland and XWayland apps
+- The theme is completely transparent - no visible cursor at all!
+- Using XCURSOR_THEME in launch options is the most reliable way to get it working in games
 
-- Invisible Cursor Theme GitHub: https://github.com/l-theanine/invisible-cursor-theme
+## Links
+
+Invisible Cursor Theme GitHub: https://github.com/l-theanine/invisible-cursor-theme
+Hyprland Wiki - Cursors: https://wiki.hyprland.org/Configuring/Variables/#cursor
