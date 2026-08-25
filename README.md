@@ -11,6 +11,7 @@ Credits to : https://github.com/l-theanine
 
 Download the invisible cursor theme from:
 [https://github.com/l-theanine/invisible-cursor-theme](https://github.com/l-theanine/invisible-cursor-theme)
+
 Extract the downloaded ZIP file (it will typically be in your `~/Downloads/` folder).
 
 ### Step 2. Install the theme
