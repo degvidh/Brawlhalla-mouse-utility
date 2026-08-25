@@ -18,21 +18,22 @@ Extract the downloaded ZIP file (it will typically be in your `~/Downloads/` fol
 
 Create the icons directory and copy the theme:
 
-```bash 
+```
 mkdir -p ~/.local/share/icons/
 cp -r ~/Downloads/invisible-cursor-theme-main/InvisibleCursor ~/.local/share/icons/
 ```
 
 ### Step 3. Apply the theme 
 
-### WARNING!
-### Find out your default cursor theme name before switching it
-### Or you can just use the default which is : Adwaita
-### Set it back by using the same command just the cursor name :D 
+> [!WARNING]
+> Find out your default cursor theme name before switching it
+> Or you can just use the default which is : Adwaita
+> Set it back by using the same command just the cursor name :D 
 
 Use hyprctl to instantly change your cursor to invisible:
-
+```
 hyprctl setcursor InvisibleCursor 24
+```
 
 That's it! Your cursor should now be completely invisible while still accepting clicks and movement inputs.
 
@@ -43,18 +44,25 @@ Simply with your mouse theme name or by using default and later
 finding out its name :D 
 
 Use this command :
-
+```
 hyprctl setcursor Adwaita 24
+```
 
 ## Throuble shooting (pew pew)
 
 ### If the theme isnt applying what do i do?
-Try restarting hyprland with : hyprctl reload
+
+Try restarting hyprland with : 
+```
+hyprctl reload
+```
 
 ### Normal cursor not coming back?
 Try to replace the cursor name with the default one 
-like in the next command : hyprctl setcursor Adwaita 24
-
+like in the next command : 
+```
+hyprctl setcursor Adwaita 24
+```
 
 ## Notes 
 
